@@ -51,123 +51,33 @@
     </head>
     <body class="font-montserrat bg-black text-white overflow-x-hidden">
         <!-- Preloader -->
-        <div id="preloader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black">
-            <div class="relative">
-                <!-- From Uiverse.io by JkHuger --> 
-                <div class="scene">
-                    <div class="forest">
-                      <div class="tree tree1">
-                        <div class="branch branch-top"></div>
-                        <div class="branch branch-middle"></div>
-                      </div>
-                  
-                      <div class="tree tree2">
-                        <div class="branch branch-top"></div>
-                        <div class="branch branch-middle"></div>
-                        <div class="branch branch-bottom"></div>
-                      </div>
-                  
-                      <div class="tree tree3">
-                        <div class="branch branch-top"></div>
-                        <div class="branch branch-middle"></div>
-                        <div class="branch branch-bottom"></div>
-                      </div>
-                  
-                      <div class="tree tree4">
-                        <div class="branch branch-top"></div>
-                        <div class="branch branch-middle"></div>
-                        <div class="branch branch-bottom"></div>
-                      </div>
-                  
-                      <div class="tree tree5">
-                        <div class="branch branch-top"></div>
-                        <div class="branch branch-middle"></div>
-                        <div class="branch branch-bottom"></div>
-                      </div>
-                  
-                      <div class="tree tree6">
-                        <div class="branch branch-top"></div>
-                        <div class="branch branch-middle"></div>
-                        <div class="branch branch-bottom"></div>
-                      </div>
-                  
-                      <div class="tree tree7">
-                        <div class="branch branch-top"></div>
-                        <div class="branch branch-middle"></div>
-                        <div class="branch branch-bottom"></div>
-                      </div>
-                    </div>
-                    
-                    <div class="tent">
-                        <div class="roof"></div>
-                        <div class="roof-border-left">
-                          <div class="roof-border roof-border1"></div>
-                          <div class="roof-border roof-border2"></div>
-                          <div class="roof-border roof-border3"></div>
-                        </div>
-                        <div class="entrance">
-                          <div class="door left-door">
-                            <div class="left-door-inner"></div>
-                          </div>
-                          <div class="door right-door">
-                            <div class="right-door-inner"></div>
-                          </div>
-                        </div>
-                      </div>
-                  
-                    <div class="floor">
-                        <div class="ground ground1"></div>
-                        <div class="ground ground2"></div>
-                      </div>
-                    
-                    <div class="fireplace">
-                      <div class="support"></div>
-                      <div class="support"></div>
-                      <div class="bar"></div>
-                      <div class="hanger"></div>
-                      <div class="smoke"></div>
-                      <div class="pan"></div>
-                      <div class="fire">
-                        <div class="line line1">
-                          <div class="particle particle1"></div>
-                          <div class="particle particle2"></div>
-                          <div class="particle particle3"></div>
-                          <div class="particle particle4"></div>
-                        </div>
-                        <div class="line line2">
-                          <div class="particle particle1"></div>
-                          <div class="particle particle2"></div>
-                          <div class="particle particle3"></div>
-                          <div class="particle particle4"></div>
-                        </div>
-                        <div class="line line3">
-                          <div class="particle particle1"></div>
-                          <div class="particle particle2"></div>
-                          <div class="particle particle3"></div>
-                          <div class="particle particle4"></div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div class="time-wrapper">
-                      <div class="time">
-                        <div class="day"></div>
-                        <div class="night">
-                          <div class="moon"></div>
-                          <div class="star star1 star-big"></div>
-                          <div class="star star2 star-big"></div>
-                          <div class="star star3 star-big"></div>
-                          <div class="star star4"></div>
-                          <div class="star star5"></div>
-                          <div class="star star6"></div>
-                          <div class="star star7"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-            </div>
+        <!-- Preloader Hacker -->
+<div id="preloader" class="fixed inset-0 z-[9999] flex items-center justify-center hacker-preloader">
+    <div class="boot-panel">
+        <div class="boot-header">
+            <span class="boot-dot"></span>
+            <span>SYSTEM BOOT</span>
         </div>
+
+        <h2 class="boot-title" data-text="MARCELO FUENTES">
+            MARCELO FUENTES
+        </h2>
+
+        <div class="boot-terminal">
+            <p class="boot-line">Inicializando perfil técnico...</p>
+            <p class="boot-line">Carregando módulos: Full Stack, Robótica, Educação, Cloud...</p>
+            <p class="boot-line">Validando credenciais profissionais...</p>
+            <p class="boot-line success">ACESSO LIBERADO</p>
+        </div>
+
+        <div class="boot-progress">
+            <div class="boot-progress-bar"></div>
+        </div>
+
+        <p class="boot-status">Conectando ao sistema...</p>
+    </div>
+</div>
+            
 
         <!-- Navbar -->
         <nav class="fixed top-0 w-full bg-gradient-to-r from-black/90 to-transparent backdrop-blur-md z-50 transition-all duration-500 site-navbar" id="navbar">
@@ -254,9 +164,9 @@
                 </div>
                 
                 <h1 class="text-5xl md:text-7xl font-bold font-orbitron mb-6 reveal-element" data-delay="400">
-                    <span class="hero-name-gradient">
-                        Marcelo Fuentes
-                    </span>
+                    <span class="hero-name-gradient hacker-title" data-text="Marcelo Fuentes">
+                 Marcelo Fuentes
+                </span>
                 </h1>
                 
            <p class="text-sm sm:text-base md:text-2xl text-gray-300 mb-8 w-full px-2 mx-auto reveal-element typing-effect" data-delay="600">
@@ -281,8 +191,9 @@
             </div>
         </section>
 
-        <!-- Particles Background (a partir da seção Sobre Mim até antes do footer) -->
-        <div id="particles-js" class="fixed inset-0 z-0 pointer-events-none"></div>
+ <canvas id="hacker-background" class="fixed inset-0 z-0 pointer-events-none"></canvas>
+<div class="cyber-scan fixed inset-0 z-0 pointer-events-none"></div>
+<div class="cyber-noise fixed inset-0 z-0 pointer-events-none"></div>
 
         <!-- About Section -->
         <section id="about" class="py-20 relative z-10">
@@ -298,26 +209,47 @@
                     <div class="md:w-1/2 reveal-element" data-direction="left">
                         <div class="p-1 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple shadow-glow">
                             <div class="rounded-full overflow-hidden bg-black p-1">
-                                <div class="aspect-square relative overflow-hidden rounded-full">
-                                    <img src="assets/marcelofuentes.jpg" alt="Marcelo Fuentes" class="object-cover w-full h-full">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                    <div class="absolute inset-0 border-t border-l border-r border-white/20 rounded-full"></div>
-                                </div>
+                               <div class="aspect-square relative overflow-hidden rounded-full profile-scan-photo">
+    <img src="assets/marcelofuentes.jpg" alt="Marcelo Fuentes" class="object-cover w-full h-full">
+
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+    <div class="absolute inset-0 border-t border-l border-r border-white/20 rounded-full"></div>
+
+    <!-- Efeito de leitura futurística -->
+    <div class="profile-scan-ui" aria-hidden="true">
+        <span class="scan-line"></span>
+        <span class="scan-ring scan-ring-1"></span>
+        <span class="scan-ring scan-ring-2"></span>
+        <span class="scan-dot scan-dot-1"></span>
+        <span class="scan-dot scan-dot-2"></span>
+        <span class="scan-dot scan-dot-3"></span>
+        <span class="scan-label scan-label-top">IDENTITY SCAN</span>
+        <span class="scan-label scan-label-bottom">SYSTEM ONLINE</span>
+    </div>
+</div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="md:w-1/2 reveal-element" data-direction="right">
-                        <div class="space-y-6">
-                            <div class="relative">
-                                <div class="absolute -left-4 top-0 h-full w-0.5 bg-gradient-to-b from-neon-blue to-neon-purple"></div>
-                                <h3 class="text-2xl font-bold font-orbitron text-white mb-4">Desenvolvedor Full Stack e Especialista em Robótica</h3>
-                                <p class="text-gray-300 leading-relaxed">
-                                    Sou um entusiasta da tecnologia, impulsionado pela missão de transformar ideias em soluções inovadoras que conectam o mundo digital ao físico. Com expertise em Front-End, Back-End, Cloud Computing, IoT (Internet das Coisas) e Robótica, meu objetivo é desenvolver sistemas inteligentes, escaláveis e visualmente impactantes, desde aplicações web até dispositivos embarcados e autômatos.
-                                </p>
-                            </div>
-                            
-                            <div class="grid grid-cols-2 gap-4 mt-6">
+                   <div class="md:w-1/2 reveal-element" data-direction="right">
+    <div class="about-info-card">
+        <div class="about-card-glow"></div>
+
+        <div class="space-y-6 relative z-10">
+            <div class="relative">
+                <div class="absolute -left-4 top-0 h-full w-0.5 bg-gradient-to-b from-neon-blue to-neon-purple"></div>
+
+               
+                <h3 class="text-2xl font-bold font-orbitron text-white mb-4">
+                    Desenvolvedor Full Stack e Especialista em Robótica
+                </h3>
+
+                <p class="text-gray-300 leading-relaxed">
+                    Sou um entusiasta da tecnologia, impulsionado pela missão de transformar ideias em soluções inovadoras que conectam o mundo digital ao físico. Com expertise em Front-End, Back-End, Cloud Computing, IoT (Internet das Coisas) e Robótica, meu objetivo é desenvolver sistemas inteligentes, escaláveis e visualmente impactantes, desde aplicações web até dispositivos embarcados e autômatos.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 mt-6 about-feature-grid">
                                 <div class="flex items-center gap-2">
                                     <div class="w-2 h-2 rounded-full bg-neon-blue"></div>
                                     <span class="text-gray-300">Desenvolvimento Web</span>
@@ -330,15 +262,14 @@
                                     <div class="w-2 h-2 rounded-full bg-neon-blue"></div>
                                     <span class="text-gray-300">Cloud Computing</span>
                                 </div>
-                                <div class="flex items-center gap-2">
-                                    <div class="w-2 h-2 rounded-full bg-neon-purple"></div>
-                                    <span class="text-gray-300">Robótica</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                 <div class="flex items-center gap-2 ">
+                    <div class="w-2 h-2 rounded-full bg-neon-purple"></div>
+                    <span class="text-gray-300">Robótica</span>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
         </section>
 
         <!-- Skills Section -->
@@ -702,7 +633,7 @@
                                 <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue mb-2">
                                     2002-2007   
                                 </span>
-                                <h3 class="text-2xl font-bold font-orbitron text-white mb-2">Proprietário de uma loja de informática - INSIDE INFORMÁTICA</h3>
+                                <h3 class="text-2xl font-bold font-orbitron text-white mb-2">Proprietário da - INSIDE INFORMÁTICA</h3>
                                 <p class="text-gray-300">Em 2002, abri oficialmente minha loja, onde além da venda de equipamentos, prestava serviços de manutenção de computadores, notebooks e servidores, com contrato com várias empresas.</p>
                             </div>
                             

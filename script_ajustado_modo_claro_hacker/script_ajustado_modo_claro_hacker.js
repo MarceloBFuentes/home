@@ -1,5 +1,21 @@
 // ===============================
+// PRELOADER
+// ===============================
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
 
+    if (preloader) {
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        }, 1000);
+    }
+
+    initAnimations();
+});
 
 // ===============================
 // TEMA CLARO / ESCURO
@@ -697,19 +713,3 @@ function showCustomAlert(message) {
         setTimeout(() => alertBox.remove(), 500);
     }, 3000);
 }
-// Preloader Hacker
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-
-    setTimeout(() => {
-        if (preloader) {
-            preloader.classList.add('preloader-exit');
-
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 700);
-        }
-
-        initAnimations();
-    }, 5200);
-});
