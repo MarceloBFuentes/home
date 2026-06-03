@@ -48,7 +48,7 @@ function updateHackerLayerVisibility(theme) {
 
     // No modo claro, o efeito precisa de mais presença e contraste.
     if (hackerCanvas) {
-        hackerCanvas.style.opacity = isLight ? '0.92' : '0.88';
+        hackerCanvas.style.opacity = isLight ? '0.42' : '0.55';
         hackerCanvas.style.mixBlendMode = isLight ? 'multiply' : 'screen';
     }
 
@@ -327,7 +327,7 @@ function initHackerBackground() {
                 text: randomCode(),
                 speed: 0.18 + Math.random() * 0.75,
                 size: 10 + Math.random() * 8,
-                opacity: 0.16 + Math.random() * 0.45,
+                opacity: 0.05 + Math.random() * 0.18,
                 delay: Math.random() * 100,
                 glitch: Math.random() > 0.72
             });
@@ -345,7 +345,7 @@ function initHackerBackground() {
                 y: Math.random() * height,
                 length: 120 + Math.random() * 280,
                 speed: 1.5 + Math.random() * 2.2,
-                opacity: 0.18 + Math.random() * 0.28
+                opacity: 0.08 + Math.random() * 0.18
             });
         }
     }
@@ -477,13 +477,13 @@ function initHackerBackground() {
                 element.text = randomCode();
             }
 
-            const pulse = Math.sin(Date.now() * 0.002 + element.delay) * 0.15;
+            const pulse = Math.sin(Date.now() * 0.002 + element.delay) * 0.04;
 
             ctx.save();
             ctx.font = `${element.size}px Orbitron, monospace`;
             ctx.globalAlpha = isLightMode
-                ? Math.min(0.92, element.opacity + pulse + 0.28)
-                : Math.min(0.88, element.opacity + pulse);
+                ? Math.min(0.28, element.opacity + pulse + 0.04)
+                : Math.min(0.35, element.opacity + pulse);
 
             if (isLightMode) {
                 ctx.fillStyle = index % 3 === 0
@@ -677,25 +677,35 @@ if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const name = document.getElementById('name')?.value || 'Marcelo';
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-        showCustomAlert(`Obrigado, ${name}! Sua mensagem foi enviada com sucesso.`);
+        if (!name || !email || !message) {
+            showCustomAlert('Por favor, preencha nome, e-mail e mensagem.');
+            return;
+        }
+
+        const phoneNumber = '5516996093275';
+
+        const whatsappMessage = `
+Olá, Marcelo! Vim pelo seu portfólio.
+
+Nome: ${name}
+E-mail: ${email}
+
+Mensagem:
+${message}
+        `;
+
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+
+        window.open(whatsappUrl, '_blank');
+
+        showCustomAlert(`Obrigado, ${name}! Sua mensagem foi direcionada para o WhatsApp.`);
 
         contactForm.reset();
     });
-}
-
-function showCustomAlert(message) {
-    const alertBox = document.createElement('div');
-    alertBox.className = 'custom-alert';
-    alertBox.textContent = message;
-
-    document.body.appendChild(alertBox);
-
-    setTimeout(() => {
-        alertBox.style.opacity = '0';
-        setTimeout(() => alertBox.remove(), 500);
-    }, 3000);
 }
 // Preloader Hacker
 window.addEventListener('load', () => {
