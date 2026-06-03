@@ -234,20 +234,92 @@ function initSpaceScene() {
 // Inicializar cena 3D
 initSpaceScene();
 
+
+// Tema claro/escuro
+const themeToggle = document.getElementById('theme-toggle');
+const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+
+function getSavedTheme() {
+    try {
+        return localStorage.getItem('portfolio-theme') || 'dark';
+    } catch (error) {
+        return 'dark';
+    }
+}
+
+function saveTheme(theme) {
+    try {
+        localStorage.setItem('portfolio-theme', theme);
+    } catch (error) {
+        // Mantém o site funcionando mesmo se o navegador bloquear localStorage
+    }
+}
+
+function updateThemeButtons(theme) {
+    const isLight = theme === 'light';
+    const iconClass = isLight ? 'fas fa-moon' : 'fas fa-sun';
+    const actionLabel = isLight ? 'Ativar modo escuro' : 'Ativar modo claro';
+
+    document.querySelectorAll('[data-theme-icon]').forEach(icon => {
+        icon.className = iconClass;
+    });
+
+    document.querySelectorAll('.theme-toggle').forEach(button => {
+        button.setAttribute('aria-label', actionLabel);
+        button.setAttribute('title', actionLabel);
+    });
+}
+
+function updateNavbarStyle(scrollPosition = window.scrollY + 100) {
+    const navbar = document.getElementById('navbar');
+    if (!navbar) return;
+
+    const isLight = document.documentElement.classList.contains('light-mode');
+
+    if (scrollPosition > 100) {
+        navbar.style.background = isLight ? 'rgba(255, 255, 255, 0.86)' : 'rgba(0, 0, 0, 0.8)';
+        navbar.style.backdropFilter = 'blur(14px)';
+        navbar.style.boxShadow = isLight ? '0 14px 35px rgba(15, 23, 42, 0.08)' : '0 14px 35px rgba(0, 0, 0, 0.28)';
+    } else {
+        navbar.style.background = isLight
+            ? 'linear-gradient(to right, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.55))'
+            : 'linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent)';
+        navbar.style.backdropFilter = 'blur(10px)';
+        navbar.style.boxShadow = 'none';
+    }
+}
+
+function applyTheme(theme) {
+    const selectedTheme = theme === 'light' ? 'light' : 'dark';
+    const isLight = selectedTheme === 'light';
+
+    document.documentElement.dataset.theme = selectedTheme;
+    document.documentElement.classList.toggle('light-mode', isLight);
+    document.body.classList.toggle('light-mode', isLight);
+
+    updateThemeButtons(selectedTheme);
+    updateNavbarStyle();
+    saveTheme(selectedTheme);
+}
+
+function toggleTheme() {
+    const nextTheme = document.documentElement.classList.contains('light-mode') ? 'dark' : 'light';
+    applyTheme(nextTheme);
+}
+
+if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+
+applyTheme(getSavedTheme());
+
 // Navbar ativa com base na seção visível
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
     const scrollPosition = window.scrollY + 100;
     
-    // Mudar a opacidade do navbar ao rolar
-    const navbar = document.getElementById('navbar');
-    if (scrollPosition > 100) {
-        navbar.style.background = 'rgba(0, 0, 0, 0.8)';
-        navbar.style.backdropFilter = 'blur(10px)';
-    } else {
-        navbar.style.background = 'linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent)';
-    }
+    // Mudar a aparência do navbar ao rolar, respeitando o tema ativo
+    updateNavbarStyle(scrollPosition);
     
     // Mostrar/ocultar botão de voltar ao topo
     const backToTopButton = document.getElementById('back-to-top');

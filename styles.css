@@ -1151,3 +1151,281 @@
     opacity: 1;
     transition: opacity 0.5s ease;
 }
+
+/* ==============================
+   Melhorias profissionais: tema claro + CTA WhatsApp
+   ============================== */
+html {
+    color-scheme: dark;
+}
+
+html.light-mode {
+    color-scheme: light;
+}
+
+body,
+.site-navbar,
+.skill-card,
+.certification-card > div,
+.project-card > div,
+#mobile-menu,
+input,
+textarea {
+    transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid rgba(77, 168, 218, 0.32);
+    border-radius: 999px;
+    color: #e2e8f0;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255,255,255,0.04);
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.theme-toggle i {
+    color: #fbbf24;
+    filter: drop-shadow(0 0 9px rgba(251, 191, 36, 0.58));
+    transition: transform 0.28s ease, color 0.28s ease, filter 0.28s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px) scale(1.04);
+    border-color: rgba(168, 85, 247, 0.52);
+    box-shadow: 0 16px 45px rgba(77, 168, 218, 0.22);
+}
+
+.theme-toggle:hover i {
+    transform: rotate(-12deg) scale(1.1);
+}
+
+.theme-toggle-mobile {
+    margin-top: 1rem;
+}
+
+.hero-name-gradient {
+    display: inline-block;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(90deg, #4DA8DA 0%, #ffffff 48%, #A855F7 100%) !important;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: 0 0 38px rgba(77, 168, 218, 0.18);
+}
+
+html.light-mode body {
+    background: radial-gradient(circle at top left, #ffffff 0%, #f8fafc 42%, #eef2ff 100%) !important;
+    color: #0f172a !important;
+}
+
+html.light-mode .bg-black,
+html.light-mode .from-black\/90,
+html.light-mode #preloader {
+    background-color: #f8fafc !important;
+}
+
+html.light-mode .bg-black\/50,
+html.light-mode .skill-card,
+html.light-mode .certification-card > div,
+html.light-mode .project-card > div,
+html.light-mode #contact .relative.overflow-hidden.rounded-xl,
+html.light-mode #skills .relative.overflow-hidden.rounded-xl {
+    background: rgba(255, 255, 255, 0.82) !important;
+    border-color: rgba(15, 23, 42, 0.10) !important;
+    box-shadow: 0 22px 55px rgba(15, 23, 42, 0.10);
+}
+
+html.light-mode .bg-space-blue\/30 {
+    background: rgba(226, 232, 240, 0.70) !important;
+}
+
+html.light-mode .text-white {
+    color: #0f172a !important;
+}
+
+html.light-mode .text-gray-300 {
+    color: #334155 !important;
+}
+
+html.light-mode .text-gray-400 {
+    color: #64748b !important;
+}
+
+html.light-mode .border-neon-blue\/20,
+html.light-mode .border-neon-purple\/20,
+html.light-mode .border-neon-blue\/30,
+html.light-mode .border-neon-purple\/30,
+html.light-mode .border-neon-cyan\/30 {
+    border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+html.light-mode .theme-toggle {
+    color: #0f172a;
+    background: rgba(255, 255, 255, 0.86);
+    border-color: rgba(15, 23, 42, 0.14);
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.12);
+}
+
+html.light-mode .theme-toggle i {
+    color: #312e81;
+    filter: drop-shadow(0 0 8px rgba(49, 46, 129, 0.22));
+}
+
+html.light-mode .hero-name-gradient {
+    background-image: linear-gradient(90deg, #0f172a 0%, #2563eb 48%, #6d28d9 100%) !important;
+    text-shadow: none;
+}
+
+html.light-mode #mobile-menu {
+    background: rgba(248, 250, 252, 0.96) !important;
+}
+
+html.light-mode #particles-js {
+    opacity: 0.26;
+}
+
+html.light-mode #space-scene {
+    opacity: 0.22;
+    filter: saturate(1.15);
+}
+
+html.light-mode #home {
+    background: radial-gradient(circle at top, rgba(77, 168, 218, 0.18), transparent 35%), linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+html.light-mode #home > .absolute.inset-0.bg-gradient-to-b {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0.70), #f8fafc) !important;
+}
+
+html.light-mode input,
+html.light-mode textarea {
+    background: rgba(255, 255, 255, 0.82) !important;
+    color: #0f172a !important;
+    border-color: rgba(15, 23, 42, 0.16) !important;
+}
+
+html.light-mode input::placeholder,
+html.light-mode textarea::placeholder {
+    color: #94a3b8;
+}
+
+html.light-mode .shadow-glow,
+html.light-mode .shadow-glow-purple,
+html.light-mode .shadow-glow-cyan {
+    box-shadow: 0 18px 45px rgba(77, 168, 218, 0.16) !important;
+}
+
+.whatsapp-float {
+    width: 70px;
+    height: 70px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #25D366 0%, #16A34A 52%, #0F8F3A 100%);
+    color: #fff;
+    box-shadow: 0 16px 40px rgba(37, 211, 102, 0.45), 0 0 0 8px rgba(37, 211, 102, 0.12);
+    transform: translateZ(0);
+    animation: whatsapp-float 3s ease-in-out infinite;
+}
+
+.whatsapp-float i {
+    font-size: 2.25rem;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.30));
+}
+
+.whatsapp-float::before {
+    content: '';
+    position: absolute;
+    inset: -9px;
+    border-radius: inherit;
+    background: radial-gradient(circle, rgba(37, 211, 102, 0.42), transparent 68%);
+    animation: whatsapp-pulse 1.8s ease-out infinite;
+}
+
+.whatsapp-float::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border-radius: inherit;
+    border: 1px solid rgba(255,255,255,0.40);
+}
+
+.whatsapp-ring {
+    position: absolute;
+    inset: -3px;
+    border-radius: inherit;
+    border: 2px solid rgba(255, 255, 255, 0.28);
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 82px;
+    top: 50%;
+    transform: translateY(-50%) translateX(8px);
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    color: #fff;
+    background: rgba(15, 23, 42, 0.92);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 999px;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.25);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-4px) scale(1.06);
+    box-shadow: 0 22px 55px rgba(37, 211, 102, 0.58), 0 0 0 10px rgba(37, 211, 102, 0.14);
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+@keyframes whatsapp-pulse {
+    0% { transform: scale(0.86); opacity: 0.82; }
+    70% { transform: scale(1.22); opacity: 0; }
+    100% { transform: scale(1.22); opacity: 0; }
+}
+
+@keyframes whatsapp-float {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -7px; }
+}
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 46px;
+        height: 46px;
+    }
+
+    .whatsapp-float {
+        width: 62px;
+        height: 62px;
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    .whatsapp-float i {
+        font-size: 2rem;
+    }
+
+    .whatsapp-tooltip {
+        display: none;
+    }
+}
